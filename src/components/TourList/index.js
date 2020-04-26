@@ -8,8 +8,12 @@ export default class TourList extends Component {
     tours: tourData,
   };
 
-  removed = (id) => {
-    console.log(id);
+  removeTour = (id) => {
+    const { tours } = this.state;
+    const sortedTours = tours.filter((tour) => tour.id !== id);
+    this.setState({
+      tours: sortedTours,
+    });
   };
 
   render() {
